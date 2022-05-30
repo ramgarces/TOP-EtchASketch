@@ -6,9 +6,24 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+#sizeButton {
+    font-size: 25px;
+    margin-top: 5rem;
+    width: 10rem;
+    height: 5rem;
+    background-color: aqua;
+    border-radius: 20px;
+    transition: background-color 0.25s ease-in-out;
+}
+
+#sizeButton:hover {
+    background-color:aquamarine;
 }
 
 #grid-container {
@@ -19,6 +34,7 @@ body {
     margin: auto;
 }
 
+/* Class that is added on mouseover */
 .black {
     background-color: black;
 }
