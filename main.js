@@ -1,4 +1,6 @@
 const container = document.querySelector("#grid-container");
+const sizeButton = document.querySelector("#sizeButton");
+sizeButton.addEventListener('click', changeSize);
 
 function makeSquares(cols, rows) {
     // Setting container rows and cols to what is passed to the function
@@ -8,12 +10,18 @@ function makeSquares(cols, rows) {
     for (i = 0; i < (cols * rows); i++) {
         const square = document.createElement('div');
         square.classList.add("square");
-        square.style.border = '1px solid red';
+        // square.style.border = "1px solid red";
         container.appendChild(square);
         square.addEventListener('mouseover', function() {
             square.classList.add('black');
         })
     }
 }
+
+function changeSize() {
+    const gridSide = prompt("How many squares on the side of the grid? (Limit 100)", '');
+    makeSquares(gridSide, gridSide);
+};
+
 // Calling the function to make a 16 x 16 grid
 makeSquares(16, 16);
