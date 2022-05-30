@@ -7,8 +7,12 @@ function makeSquares(cols, rows) {
     // Creating divs (squares) equal to (cols * rows)
     for (i = 0; i < (cols * rows); i++) {
         const square = document.createElement('div');
+        square.classList.add("square");
         square.style.border = '1px solid red';
         container.appendChild(square);
+        square.addEventListener('mouseover', function() {
+            square.classList.add('black');
+        })
     }
 }
 // Calling the function to make a 16 x 16 grid
