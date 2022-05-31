@@ -19,8 +19,20 @@ function makeSquares(cols, rows) {
 }
 
 function changeSize() {
-    const gridSide = prompt("How many squares on the side of the grid? (Limit 100)", '');
-    makeSquares(gridSide, gridSide);
+    // Code to remove the previous squares from the grid
+    var elements = document.getElementsByClassName('square'), element;
+    while (element = elements[0]) {
+        element.parentNode.removeChild(element);
+    }
+    // Asking the user for the new size of the grid
+    const gridSide = prompt("How many squares on the side of the grid? (Limit 4-100)", '');
+    if (gridSide > 100) {
+        makeSquares(16, 16);
+    } else if (gridSide < 2) {
+        makeSquares(16, 16);
+    } else {
+        makeSquares(gridSide, gridSide);
+    };
 };
 
 // Calling the function to make a 16 x 16 grid
