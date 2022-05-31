@@ -13,7 +13,10 @@ function makeSquares(cols, rows) {
         // square.style.border = "1px solid red";
         container.appendChild(square);
         square.addEventListener('mouseover', function() {
-            square.classList.add('black');
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         })
     }
 }
